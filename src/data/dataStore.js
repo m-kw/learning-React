@@ -18,7 +18,7 @@ export const pageContents = {
 export const listData = {
   title: 'Things to do <sup>soon!</sup>',
   description: 'Interesting things I want to check out!',
-  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
   columns: [
     {
       key: 0,
