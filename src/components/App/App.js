@@ -3,6 +3,7 @@ import styles from './App.scss';
 import List from '../List/List';
 import { pageContents, appData } from '../../data/dataStore';
 import Creator from '../Creator/Creator';
+import Menu from '../Menu/Menu';
 
 class App extends React.Component {
   state = {
@@ -15,6 +16,8 @@ class App extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>{pageContents.title}</h1>
         <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
+
+        <Menu />
 
         {this.state.lists.map(({ key, ...listProps }) => (
           <List key={key} {...listProps}/>
