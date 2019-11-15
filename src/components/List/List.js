@@ -24,6 +24,7 @@ class List extends React.Component {
   }
 
   render() {
+    console.log('this', this);
     return (
       <section className={styles.component}>
         <Hero titleText={this.props.title} image={this.props.image}/>
@@ -48,7 +49,7 @@ class List extends React.Component {
         columns: [
           ...state.columns,
           {
-            key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+            key: state.columns.length ? state.columns[state.columns.length - 1].key + 1 : 0,
             title,
             icon: 'list-alt',
             cards: []
