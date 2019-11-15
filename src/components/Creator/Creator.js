@@ -17,29 +17,31 @@ class Creator extends React.Component {
     visibleButtons: false,
   }
 
-  handleChange(event){
+  handleChange(event) {
     // console.log(event);
-    this.setState({
+    this.setState( {
       value: event.target.value,
       visibleButtons: event.target.value.length > 0
     });
   }
 
-  handleOK(){
-    if(this.state.value != ''){
+  handleOK() {
+    if (this.state.value != '') {
       this.props.action(this.state.value);
-      this.setState({
+      this.setState( {
         value: '',
         visibleButtons: false
       });
     }
   }
 
-  handleCancel(){
-    this.setState({
-      value: '',
-      visibleButtons: false
-    });
+  handleCancel() {
+    if (window.confirm("Do you want to cancel?")) {
+      this.setState( {
+        value: '',
+        visibleButtons: false
+      });
+    }
   }
 
   render() {
