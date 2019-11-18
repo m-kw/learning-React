@@ -70,5 +70,58 @@ export const appData = {
         },
       ],
     },
+    {
+      key: 1,
+      title: 'Oh my, oh my',
+      description: 'Interesting things I want to check out!',
+      image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
+      columns: [
+        {
+          key: 0,
+          title: 'Event more books',
+          icon: 'book',
+          cards: [
+            {
+              key: 0,
+              title: 'Ann from Green Gables',
+            },
+            {
+              key: 1,
+              title: 'Interpreter of Maladies',
+            },
+          ],
+        },
+        {
+          key: 1,
+          title: 'Movies',
+          icon: 'film',
+          cards: [
+            {
+              key: 0,
+              title: 'Harry Potter',
+            },
+            {
+              key: 1,
+              title: 'Star Wars',
+            },
+          ],
+        },
+        {
+          key: 2,
+          title: 'Games',
+          icon: 'gamepad',
+          cards: [
+            {
+              key: 0,
+              title: 'The Witcher',
+            },
+            {
+              key: 1,
+              title: 'Skyrim',
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

@@ -10,7 +10,6 @@
 
   &:hover {
     background-color: #ecf0f1;
-    cursor: pointer;
   }
 
   i {
@@ -20,27 +19,45 @@
     transform: translate(-50%, -50%);
     color: $color-dark;
     font-size: 2em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  h4 {
+    color: $color-dark;
+    font-size: 2em;
+    margin: 10px;
   }
 }
 
 .list {
   position: absolute;
   width: 50%;
-  bottom: -150%;
-  transform: translateX(50%);
-  display: flex;
+  top: 0;
+  transform: translate(50%, 35%);
+  display: block;
   z-index: 1000;
-  flex-direction: row;
   background: $color-light;
   border-radius: $radius;
   padding: 0 15px;
 
-  p {
-    color: $color-dark;
-  }
+}
 
-  &.hidden {
-    display: none;
+ul {
+  list-style-type: none;
+
+  li {
+
+    p {
+      color: $color-dark;
+
+      &:hover {
+        cursor: pointer;
+        color: $color-warning;
+      }
+    }
   }
 
 }
