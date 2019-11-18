@@ -4,26 +4,30 @@ import styles from './Menu.scss';
 
 class Menu extends React.Component {
   state = {
-    listVisible: false,
+    menuListVisible: false,
   }
 
   render() {
     console.log('this', this);
+    console.log('this.state', this.state.menuListVisible);
     return (
-      <div className={styles.component} onClick={this.handleClick}>
+      <div className={styles.component} onClick={e => this.handleClick(e)}>
         <i className="fas fa-bars"></i>
-        <div className={styles.list + (this.state.listVisible ? + styles.shown : styles.list)} id="list">
+        <div className={(this.state.menuListVisible ? styles.list : styles.hidden)}>
           <p>Lista list</p>
         </div>
       </div>
     );
   }
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
     console.log('this click', this);
-    this.setState( {
-      listVisible: true,
-    });
+    this.setState(prevState => (
+      {
+        menuListVisible: !prevState.menuListVisible,
+      }
+    ));
   }
 
 }

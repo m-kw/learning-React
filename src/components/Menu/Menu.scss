@@ -39,9 +39,8 @@
     color: $color-dark;
   }
 
-  &.shown {
-    display: flex;
-    z-index: 1000;
+  &.hidden {
+    display: none;
   }
 
 }
