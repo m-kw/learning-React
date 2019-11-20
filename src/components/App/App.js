@@ -1,33 +1,37 @@
 import React from 'react';
 import styles from './App.scss';
-import List from '../List/List';
-import { pageContents } from '../../data/dataStore';
+import List from '../List/ListContainer';
 import Creator from '../Creator/Creator';
 import Menu from '../Menu/Menu';
 import PropTypes from 'prop-types';
 
 class App extends React.Component {
   state = {
-    lists: this.props.lists || [],
     image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
-    selectedListKey: 0,
+    selectedListId: 'list-1',
   }
 
   static propTypes = {
     lists: PropTypes.array,
+    title: PropTypes.node,
+    subtitle: PropTypes.node,
   }
 
   render() {
+    const { lists, title, subtitle } = this.props;
     return (
       <main className={styles.component}>
-        <h1 className={styles.title}>{pageContents.title}</h1>
-        <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
+        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.subtitle}>{subtitle}</h2>
 
-        <Menu lists={this.state.lists} onListClick={this.handleListClick.bind(this)}/>
+        <Menu lists={lists} onListClick={this.handleListClick.bind(this)}/>
 
-        {this.state.lists.filter(list => list.key === this.state.selectedListKey).map(({ key, ...listProps }) => (
-          <List key={key} {...listProps}/>
+
+        {lists.filter(listData => listData.id === this.state.selectedListId).map(listData => (
+          <List key={listData.id} {...listData} />
         ))}
+
+
 
         <Creator action={title => this.addList(title)} />
 
@@ -35,9 +39,9 @@ class App extends React.Component {
     );
   }
 
-  handleListClick(key) {
+  handleListClick(id) {
     this.setState({
-      selectedListKey: key,
+      selectedListId: id,
     });
   }
 
