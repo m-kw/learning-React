@@ -1,15 +1,20 @@
 import React from 'react';
 import styles from './App.scss';
 import List from '../List/List';
-import { pageContents, appData } from '../../data/dataStore';
+import { pageContents } from '../../data/dataStore';
 import Creator from '../Creator/Creator';
 import Menu from '../Menu/Menu';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
   state = {
     lists: this.props.lists || [],
     image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
     selectedListKey: 0,
+  }
+
+  static propTypes = {
+    lists: PropTypes.array,
   }
 
   render() {
@@ -27,7 +32,7 @@ class App extends React.Component {
         <Creator action={title => this.addList(title)} />
 
       </main>
-    )
+    );
   }
 
   handleListClick(key) {
@@ -48,12 +53,12 @@ class App extends React.Component {
               title,
               columns: [],
               image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
-            }
+            },
           ],
-          selectedListKey: newKey
+          selectedListKey: newKey,
         }
       );
-    })
+    });
   }
 
 }
