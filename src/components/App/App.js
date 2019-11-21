@@ -15,10 +15,12 @@ class App extends React.Component {
     lists: PropTypes.array,
     title: PropTypes.node,
     subtitle: PropTypes.node,
+    selectedListId: PropTypes.node,
+    addList: PropTypes.func,
   }
 
   render() {
-    const { lists, title, subtitle } = this.props;
+    const { lists, title, subtitle, addList } = this.props;
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
@@ -33,7 +35,7 @@ class App extends React.Component {
 
 
 
-        <Creator action={title => this.addList(title)} />
+        <Creator action={addList} />
 
       </main>
     );
