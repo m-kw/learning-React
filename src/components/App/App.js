@@ -6,21 +6,17 @@ import Menu from '../Menu/Menu';
 import PropTypes from 'prop-types';
 
 class App extends React.Component {
-  state = {
-    image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
-    selectedListId: 'list-1',
-  }
 
   static propTypes = {
     lists: PropTypes.array,
     title: PropTypes.node,
     subtitle: PropTypes.node,
-    selectedListId: PropTypes.node,
     addList: PropTypes.func,
+    selectedListId: PropTypes.string,
   }
 
   render() {
-    const { lists, title, subtitle, addList } = this.props;
+    const { lists, title, subtitle, addList, selectedListId } = this.props;
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
@@ -29,8 +25,9 @@ class App extends React.Component {
         <Menu lists={lists} onListClick={this.handleListClick.bind(this)}/>
 
 
-        {lists.filter(listData => listData.id === this.state.selectedListId).map(listData => (
-          <List key={listData.id} {...listData} />
+        {console.log('lists', lists)}
+        {lists.filter(list => list.id === selectedListId).map(list => (
+          <List key={list.id} {...list} />
         ))}
 
 
@@ -42,31 +39,12 @@ class App extends React.Component {
   }
 
   handleListClick(id) {
+    const { selectedListId } = this.props;
     this.setState({
       selectedListId: id,
     });
+    console.log('state', selectedListId);
   }
-
-  addList(title) {
-    this.setState(state => {
-      const newKey = state.lists.length ? state.lists[state.lists.length - 1].key + 1 : 0;
-      return (
-        {
-          lists: [
-            ...state.lists,
-            {
-              key: newKey,
-              title,
-              columns: [],
-              image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
-            },
-          ],
-          selectedListKey: newKey,
-        }
-      );
-    });
-  }
-
 }
 
 export default App;
