@@ -30,8 +30,6 @@ class App extends React.Component {
 
         <Menu lists={lists} onListClick={this.handleListClick.bind(this)}/>
 
-
-        {console.log('lists', lists)}
         {lists.filter(list => list.id === this.state.selectedListId).map(list => (
           <List key={list.id} {...list} />
         ))}
