@@ -7,6 +7,9 @@ import PropTypes from 'prop-types';
 import Search from '../Search/SearchContainer';
 
 class App extends React.Component {
+  state = {
+    selectedListId: 'list-1',
+  }
 
   static propTypes = {
     lists: PropTypes.array,
@@ -17,7 +20,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { lists, title, subtitle, addList, selectedListId } = this.props;
+    const { lists, title, subtitle, addList } = this.props;
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
@@ -29,7 +32,7 @@ class App extends React.Component {
 
 
         {console.log('lists', lists)}
-        {lists.filter(list => list.id === selectedListId).map(list => (
+        {lists.filter(list => list.id === this.state.selectedListId).map(list => (
           <List key={list.id} {...list} />
         ))}
 
@@ -42,11 +45,9 @@ class App extends React.Component {
   }
 
   handleListClick(id) {
-    const { selectedListId } = this.props;
     this.setState({
       selectedListId: id,
     });
-    console.log('state', selectedListId);
   }
 }
 

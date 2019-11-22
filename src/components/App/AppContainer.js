@@ -6,7 +6,6 @@ const mapStateToProps = state => ({
   title: state.app.title,
   subtitle: state.app.subtitle,
   lists: state.lists,
-  selectedListId: 'list-1',
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -16,6 +15,7 @@ const mapDispatchToProps = (dispatch, props) => ({
       title,
       columns: [],
       image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
+      selectedListId: props.id,
     },
   )),
 });
