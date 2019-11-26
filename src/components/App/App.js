@@ -7,10 +7,6 @@ import PropTypes from 'prop-types';
 import Search from '../Search/SearchContainer';
 
 class App extends React.Component {
-  state = {
-    selectedListId: 'list-1',
-  }
-
   static propTypes = {
     lists: PropTypes.array,
     title: PropTypes.node,
@@ -20,7 +16,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { lists, title, subtitle, addList } = this.props;
+    const { lists, title, subtitle, addList, selectedListId } = this.props;
+    console.log('app props', this.props);
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
@@ -30,7 +27,7 @@ class App extends React.Component {
 
         <Menu lists={lists} onListClick={this.handleListClick.bind(this)}/>
 
-        {lists.filter(list => list.id === this.state.selectedListId).map(list => (
+        {lists.filter(list => list.id === selectedListId).map(list => (
           <List key={list.id} {...list} />
         ))}
 

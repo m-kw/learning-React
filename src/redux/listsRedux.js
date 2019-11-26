@@ -10,7 +10,7 @@ export const createAction_addList = payload => ({ payload, type: ADD_LIST });
 export default function reducer(state = [], action = {}) {
   switch (action.type) {
     case ADD_LIST:
-      return [...state, { ...action.payload, id: shortid.generate() }];
+      return [...state, { ...action.payload, id: shortid.generate()}];
     default:
       return state;
   }
