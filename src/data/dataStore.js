@@ -9,7 +9,8 @@ export const settings = {
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
   search: {
-    defaultText: '',
+    defaultText: 'Search...',
+    icon: 'search',
   },
 };
 

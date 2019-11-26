@@ -34,8 +34,6 @@ class App extends React.Component {
           <List key={list.id} {...list} />
         ))}
 
-
-
         <Creator action={addList} />
 
       </main>
