@@ -96,8 +96,14 @@ const lists = [
   {
     id: 'list-2',
     title: 'Oh my, oh my',
-    description: 'Interesting things I want to check out!',
+    description: 'More interesting things to be done!',
     image: 'https://i.ibb.co/x863rML/black-and-white-blank-challenge-connect-262488-1.jpg',
+  },
+  {
+    id: 'list-3',
+    title: 'Third list already',
+    description: 'Even more to explore !',
+    image: 'https://i.ibb.co/NCMzG6d/brett-zeck-eyf-Mg-Gvo9-PA-unsplash.jpg',
   },
 ];
 
