@@ -12,6 +12,19 @@ export const settings = {
     defaultText: 'Search...',
     icon: 'search',
   },
+  headerIcon: 'medal',
+};
+
+export const infoData = {
+  title: 'About',
+  image: 'https://i.ibb.co/MRwRfY3/simon-abrams-e-Mnddgd3pj-Q-unsplash.jpg',
+  content: 'A few words about me, this app\'s creator',
+};
+
+export const faqData = {
+  title: 'FAQ',
+  image: 'https://i.ibb.co/8N6fmrN/annie-spratt-3-Eagf8-RTq-Pc-unsplash-min.jpg',
+  content: 'Have any questions? Have a look here and find answers',
 };
 
 export const pageContents = {

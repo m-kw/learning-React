@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import App from './App';
+import Home from './Home';
 import { createAction_addList } from '../../redux/listsRedux';
 import { createAction_changeSelectedList } from '../../redux/appRedux';
 import shortid from 'shortid';
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => ({
   } ,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
