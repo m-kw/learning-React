@@ -17,7 +17,6 @@ class App extends React.Component {
 
   render() {
     const { lists, title, subtitle, addList, selectedListId } = this.props;
-    console.log('app props', this.props);
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
@@ -37,10 +36,9 @@ class App extends React.Component {
     );
   }
 
-  handleListClick(id) {
-    this.setState({
-      selectedListId: id,
-    });
+  handleListClick() {
+    console.log('props', this.props);
+    console.log('selectedListId', this.props.selectedListId);
   }
 }
 
