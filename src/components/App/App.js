@@ -4,6 +4,7 @@ import Info from '../Info/Info';
 import Faq from '../Faq/Faq';
 import List from '../List/ListContainer';
 import MainLayout from '../MainLayout/MainLayout';
+import SearchResults from '../SearchResults/SearchResults';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
 import styles from './App.scss';
@@ -21,6 +22,7 @@ const App = () => (
         <Route exact path ='/info' component={Info} />
         <Route exact path='/faq' component={Faq} />
         <Route exact path='/list/:id' component={List} />
+        <Route exact path='/search/...' component={SearchResults} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>
