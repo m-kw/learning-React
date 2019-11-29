@@ -4,7 +4,7 @@ import { getSearchedCards } from '../../redux/cardsRedux';
 import { createAction_changeSearchString } from '../../redux/searchStringRedux';
 
 const mapStateToProps = (state, props) => ({
-  cards: getSearchedCards(state, props.match.params.searchString),
+  cards: getSearchedCards(state, props.match.params.id),
 });
 
 const mapDispatchToProps = (dispatch) => ({
