@@ -15,6 +15,7 @@ class Menu extends React.Component {
 
   render() {
     const { lists, onListClick } = this.props;
+    console.log('props', this);
     return (
       <div className={styles.component}>
         <i className="fas fa-bars" onClick={e => this.handleClick(e)}></i>
